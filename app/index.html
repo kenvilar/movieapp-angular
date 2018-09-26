@@ -11,11 +11,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-controller="catalogCtrl">
+
+  <div class="container">
+    <div class="row">
+      <div class="card col-sm-10 col-12">
+        <div class="row">
+          <div class="movie-container col-sm-2 col-6" ng-repeat="movie in movieList">
+            <a href="" class="movie-thumb">
+              <img class="img-thumbnail" ng-src="img/posters{{ movie.poster_path }}" alt="image">
+              <h5>{{ movie.title }}</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>

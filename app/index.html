@@ -12,15 +12,28 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="assets/css/app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-controller="catalogCtrl">
+
+  <div class="navbar position-fixed navbar-dark">
+    <div class="container">
+      <a href="" class="navbar-brand">
+        <span class=""></span>Ken Angular MovieDB
+      </a>
+    </div>
+  </div>
 
   <div class="container">
     <div class="row">
       <div class="card col-sm-10 col-12">
         <div class="row">
+
+          <div class="col-12">
+            <div class="card-header card-title">Most Watched This Week</div>
+          </div>
+
           <div class="movie-container col-sm-2 col-6" ng-repeat="movie in movieList">
             <a href="" class="movie-thumb">
               <img class="img-thumbnail" ng-src="img/posters{{ movie.poster_path }}" alt="image">

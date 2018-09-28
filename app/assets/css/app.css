@@ -1,4 +1,7 @@
-.card-title {
+body {
+	margin-top: 50px;
+}
+.card-title, .navbar-brand {
 	font-family: 'lobster', cursive;
 	font-weight: bold;
 	line-height: 1.1;

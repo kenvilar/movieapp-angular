@@ -7,7 +7,12 @@ app.config([
 		routeProvider.when('/', {
 			templateUrl: 'catalog/catalog.html',
 			controller: 'CatalogCtrl'
-		}).otherwise({
+		})
+		.when('/movie/:id', {
+			templateUrl: 'movie/movie.html',
+			controller: 'MovieCtrl',
+		})
+		.otherwise({
 			redirectTo: '/',
 		});
 	},

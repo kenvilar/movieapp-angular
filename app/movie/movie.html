@@ -16,9 +16,9 @@
             <div class="overview">{{ movie.overview }}</div>
             <div class="extra-details">
                 <kbd>Runtime: {{ movie.runtime }} minutes</kbd>
-                <kbd>Runtime: {{ movie.production_countries[0].name }}</kbd>
-                <kbd>Runtime: {{ movie.spoken_languages[0].name }}</kbd>
-                <kbd>Runtime: {{ movie.release_date | date }}</kbd>
+                <kbd>Country: {{ movie.production_countries[0].name }}</kbd>
+                <kbd>Language: {{ movie.spoken_languages[0].name }}</kbd>
+                <kbd>Release: {{ movie.release_date | date }}</kbd>
             </div>
         </div>
     </div>

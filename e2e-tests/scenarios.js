@@ -19,4 +19,24 @@ describe('E2E tests: movieDB', function() {
 			expect(mytest.getCurrentUrl()).toMatch('\/genre\/Action');
 		});
 	});
+
+	describe('movie', function() {
+		var mytest;
+
+		beforeEach(function() {
+			mytest = browser;
+			browser.get('/#/movie/222935');
+		});
+
+		it('should render the movies details page', function() {
+			var elem = by.css('.moviedetails');
+			expect(mytest.isElementPresent(elem)).toBe(true);
+		});
+
+		it('should take you back to the movie gallery when you click Return to Catalog', function() {
+			var link = element(by.css('.return-btn'));
+			link.click();
+			expect(mytest.getCurrentUrl()).toMatch('\/#');
+		});
+	});
 });

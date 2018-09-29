@@ -12,6 +12,10 @@ app.config([
 			templateUrl: 'movie/movie.html',
 			controller: 'MovieCtrl',
 		})
+		.when('/genre/:genreName', {
+			templateUrl: 'catalog/catalog.html',
+			controller: 'GenreCtrl',
+		})
 		.otherwise({
 			redirectTo: '/',
 		});

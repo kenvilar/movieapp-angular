@@ -1,8 +1,8 @@
-<div class="card col-sm-10 col-12">
+<div class="card col-sm-9 col-12" style="float: left">
     <div class="row">
 
         <div class="col-12">
-            <div class="card-header card-title">Most Watched This Week</div>
+            <div class="card-header card-title">{{ pageTitle }}</div>
         </div>
 
         <div class="movie-container col-sm-2 col-6"
@@ -22,5 +22,19 @@
                 ng-model="currentPage"
                 items-per-page="pageSize"></ul>
         </div>
+    </div>
+</div>
+
+<div class="col-sm-2" style="float: left">
+    <div class="card-title genre-title">by genre</div>
+    <div class="list-group">
+        <a href="#/" class="list-group-item">
+            <span class="badge">{{ movieList.length }}</span>
+            All
+        </a>
+        <a href="#/genre/{{ genre.name }}" class="list-group-item" ng-repeat="genre in genreList">
+            <span class="badge">{{ genre.total }}</span>
+            {{ genre.name }}
+        </a>
     </div>
 </div>

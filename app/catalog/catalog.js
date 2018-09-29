@@ -5,12 +5,12 @@ var app = angular
 				'ui.bootstrap',
 			]);
 
-app.controller('CatalogCtrl', ['$scope', '$http', function($scope, $http) {
+app.controller('CatalogCtrl', ['$scope', 'movieAPIservice', function($scope, movieAPIservice) {
 
 	$scope.currentPage = 1;
 	$scope.pageSize = 12;
 
-	$http.get('json/movies.json')
+	movieAPIservice.getMovies()
 		.success((data) => {
 			$scope.movieList = data;
 		});

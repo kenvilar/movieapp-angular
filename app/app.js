@@ -7,4 +7,5 @@ angular
 		'kenMovieDb.movie',
 		'kenMovieDb.paginate_filter',
 		'kenMovieDb.routesConfig',
+		'kenMovieDb.service',
 	]);

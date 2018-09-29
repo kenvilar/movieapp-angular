@@ -4,12 +4,12 @@ var app = angular.module('kenMovieDb.movie', ['ui.bootstrap']);
 app.controller('MovieCtrl', [
 		'$scope',
 		'$filter',
-		'$http',
+		'movieAPIservice',
 		'$routeParams',
-		function($scope, $filter, $http, $routeParams) {
+		function($scope, $filter, movieAPIservice, $routeParams) {
 			$scope.movieId = $routeParams.id;
 
-			$http.get('json/movies.json')
+			movieAPIservice.getMovies()
 				.success((data) => {
 					$scope.movie = $filter('filter')(data, {
 						id: parseInt($scope.movieId)

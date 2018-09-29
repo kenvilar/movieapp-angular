@@ -1,1 +1,25 @@
-{{ movie.title }}
+<div class="card-group moviedetails col-xs-12">
+    <img class="poster img-thumbnail img-fluid" ng-src="img/posters{{ movie.poster_path }}"
+         alt="imge">
+    <div class="card">
+        <div class="card-body">
+            <a class="return-link" href="#/">
+                <button class="return-btn btn btn-light float-right">
+                    <i class="fa fa-arrow-left"></i>
+                    Return to Catalog
+                </button>
+            </a>
+            <h1 class="movie-title">{{ movie.title }}({{ movie.release_date | date: 'yyyy' }})</h1>
+
+            <a ng-repeat="genre in movie.genres" class="btn btn-info" href="#">{{ genre.name }}</a>
+
+            <div class="overview">{{ movie.overview }}</div>
+            <div class="extra-details">
+                <kbd>Runtime: {{ movie.runtime }} minutes</kbd>
+                <kbd>Runtime: {{ movie.production_countries[0].name }}</kbd>
+                <kbd>Runtime: {{ movie.spoken_languages[0].name }}</kbd>
+                <kbd>Runtime: {{ movie.release_date | date }}</kbd>
+            </div>
+        </div>
+    </div>
+</div>

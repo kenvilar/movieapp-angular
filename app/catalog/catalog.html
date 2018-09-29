@@ -25,14 +25,17 @@
     </div>
 </div>
 
-<div class="col-sm-2" style="float: left">
+<div class="col-sm-3" style="float: left">
     <div class="card-title genre-title">by genre</div>
     <div class="list-group">
         <a href="#/" class="list-group-item">
             <span class="badge">{{ movieList.length }}</span>
             All
         </a>
-        <a href="#/genre/{{ genre.name }}" class="list-group-item" ng-repeat="genre in genreList">
+        <a href="#/genre/{{ genre.name }}"
+           ng-class="{active: genre.name == genreName}"
+           class="list-group-item"
+           ng-repeat="genre in genreList">
             <span class="badge">{{ genre.total }}</span>
             {{ genre.name }}
         </a>

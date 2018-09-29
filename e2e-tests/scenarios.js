@@ -1,42 +1,22 @@
 'use strict';
 
-/* https://github.com/angular/protractor/blob/master/docs/toc.md */
+describe('E2E tests: movieDB', function() {
+	describe('catalog', function() {
+		var mytest;
 
-describe('my app', function() {
+		beforeEach(function() {
+			mytest = browser;
+			mytest.get('/');
+		});
 
+		it('should render to catalog view when user navigates to /', function() {
+			expect(mytest.getCurrentUrl()).toMatch('\/#');
+		});
 
-  it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/view1");
-  });
-
-
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#!/view1');
-    });
-
-
-    it('should render view1 when user navigates to /view1', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
-  });
-
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#!/view2');
-    });
-
-
-    it('should render view2 when user navigates to /view2', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
-  });
+		it('should take you to the genre catalog when you click a link on the genre list', function() {
+			var link = element(by.css('.list-group-item:nth-child(2)'));
+			link.click();
+			expect(mytest.getCurrentUrl()).toMatch('\/genre\/Action');
+		});
+	});
 });
